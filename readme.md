@@ -68,4 +68,4 @@ The following classification models are implemented and trained on the same data
 ## 5. Streamlit Application
     Link : https://ml-app-app-m5yehb9sckpauvdh8nywxx.streamlit.app/
 
-    By default this app displays the information from uploaded sample UCI heart desease data. Please upload heart desease data set to perform model comparision.
+    By default this app displays the information from uploaded sample UCI heart disease data. Please upload heart disease data set to perform model comparison.
