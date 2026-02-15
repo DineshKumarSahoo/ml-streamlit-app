@@ -1,6 +1,7 @@
 # ❤️ Heart Disease Prediction Dashboard using Machine Learning
 
- 1. Problem Statement
+## 1. Problem Statement
+
 The objective of this project is to build, evaluate, and deploy multiple machine
 learning classification models to predict whether a patient has heart disease
 based on medical attributes. The application demonstrates an end-to-end ML
@@ -9,7 +10,8 @@ and deployment using Streamlit.
 
 ---
 
- 2. Dataset Description
+## 2. Dataset Description
+
 The project uses the **UCI Heart Disease Dataset** as the default sample dataset.
 It contains patient medical records with multiple clinical features such as age,
 sex, chest pain type, resting blood pressure, cholesterol, and maximum heart rate.
@@ -40,7 +42,8 @@ The following classification models are implemented and trained on the same data
 
 ---
 
- 3. Model Performance Comparison
+## 3. Model Performance Comparison
+
 | Model               | Accuracy | AUC    | Precision | Recall | F1     | MCC   |
 |---------------------|----------|--------|-----------|--------|--------|-------|
 | Logistic Regression | 0.85     | 0.9353 | 0.88      | 0.7857 | 0.8302 | 0.7002|
@@ -51,7 +54,7 @@ The following classification models are implemented and trained on the same data
 | XGBoost             | 0.7667   | 0.8984 | 0.85      | 0.6071 | 0.7083 | 0.5433|
 
 
- 4. Observations
+## 4. Observations
 
 | Model               | Observation                                                               |
 |---------------------|---------------------------------------------------------------------------|
@@ -62,7 +65,7 @@ The following classification models are implemented and trained on the same data
 | Random Forest       | Demonstrated balanced performance across metrics with improved generalization over a single tree due to ensemble averaging, though not the top performer. |
 | XGBoost             | Provided strong non-linear modeling capability with good overall accuracy and MCC, but slightly lower recall compared to the best-performing models. |
 
- 5. Streamlit Application
+## 5. Streamlit Application
     Link : https://ml-app-app-m5yehb9sckpauvdh8nywxx.streamlit.app/
 
     By default this app displays the information from uploaded sample UCI heart desease data. Please upload heart desease data set to perform model comparision.

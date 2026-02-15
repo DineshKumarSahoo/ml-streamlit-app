@@ -84,7 +84,7 @@ if current_dataset_id != st.session_state.last_dataset:
 # AUTO TRAIN MODELS (ON DATASET LOAD / CHANGE)
 # -------------------------------------------------
 if not st.session_state.trained:
-    with st.spinner("Training models automatically..."):
+    with st.spinner("Training models ..."):
         results_df, y_test, y_preds = train_models(df)
 
     st.session_state.results_df = results_df
