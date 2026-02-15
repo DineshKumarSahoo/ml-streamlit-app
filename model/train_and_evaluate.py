@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -14,16 +14,23 @@ from xgboost import XGBClassifier
 
 
 def train_models():
-    # Load dataset (LOCAL FILE)
+    # Load dataset
     df = pd.read_csv("heart_disease_uci.csv")
 
-    # Handle target column (UCI uses 'num' sometimes)
+    # Handle target column
     if "num" in df.columns:
         df["target"] = (df["num"] > 0).astype(int)
         df.drop("num", axis=1, inplace=True)
 
-    # Drop rows with missing values
+    # Drop missing values
     df = df.dropna()
+
+    # Encode categorical columns
+    label_encoders = {}
+    for col in df.select_dtypes(include=["object"]).columns:
+        le = LabelEncoder()
+        df[col] = le.fit_transform(df[col])
+        label_encoders[col] = le
 
     X = df.drop("target", axis=1)
     y = df["target"]
@@ -36,7 +43,7 @@ def train_models():
         random_state=42
     )
 
-    # Scaling (for LR & KNN)
+    # Scaling (needed for LR & KNN)
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
